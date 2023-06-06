@@ -23,6 +23,10 @@ const fetchAllPlayers = async () => {
 
 const fetchSinglePlayer = async (playerId) => {
   try {
+    const singlePlayer_API_URL = `https://fsa-puppy-bowl.herokuapp.com/api/${playerId}/`;
+    const response = await fetch(singlePlayer_API_URL);
+    const singlePlayer = await response.json(playerId);
+    return singlePlayer;
   } catch (err) {
     console.error(`Oh no, trouble fetching player #${playerId}!`, err);
   }
@@ -54,16 +58,14 @@ const renderAllPlayers = (playerList) => {
     const allPlayersElement = document.createElement("div");
     const playerDetailsElement = document.createElement("div"); // method
     playerDetailsElement.classList.add("players");
-    playersDetailsElement.classList.add("each player");
+    playerDetailsElement.classList.add("player");
     playerDetailsElement.innerHTML = `
-<h2>${players.id}</h2>
-<p>${players.name}</p>
-<p>${players.breed}</p>
-<p>${players.status}</p>
-<p>${players.imageUrl}</p>
-<p>${players.createAt}</p>
-<p>${players.teamId}</p>
-<p>${players.cohortId}</p>
+<h2>${allPlayers.id}</h2>
+<p>${allPlayers.name}</p>
+<p>${allPlayers.breed}</p>
+<p>${allPlayers.imageUrl}</p>
+<p>${allPlayers.teamId}</p>
+<p>${allPlayers.cohortId}</p>
 
 <button class="close-button">Close</button>
 `;
