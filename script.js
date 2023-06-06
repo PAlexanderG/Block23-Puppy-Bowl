@@ -45,14 +45,28 @@ const removePlayer = async (playerId) => {
   }
 };
 
-//  * It takes an array of player objects, loops through them, and creates a string of HTML for each
-//  * player, then adds that string to a larger string of HTML that represents all the players.
-//  *
+//  It takes an array of player objects, loops through them, and creates a string of HTML for each
+//  player, then adds that string to a larger string of HTML that represents all the players.
+
 const renderAllPlayers = (playerList) => {
   const allPlayers = renderAllPlayers;
   playerList.data.players.forEach((allPlayers) => {
     const allPlayersElement = document.createElement("div");
+    const playerDetailsElement = document.createElement("div"); // method
+    playerDetailsElement.classList.add("players");
     playersDetailsElement.classList.add("each player");
+    playerDetailsElement.innerHTML = `
+<h2>${players.id}</h2>
+<p>${players.name}</p>
+<p>${players.breed}</p>
+<p>${players.status}</p>
+<p>${players.imageUrl}</p>
+<p>${players.createAt}</p>
+<p>${players.teamId}</p>
+<p>${players.cohortId}</p>
+
+<button class="close-button">Close</button>
+`;
     try {
     } catch (err) {
       console.error("Uh oh, trouble rendering players!", err);
@@ -60,7 +74,7 @@ const renderAllPlayers = (playerList) => {
   });
 };
 
-//  * Then it takes that larger string of HTML and adds it to the DOM.
+//  Then it takes that larger string of HTML and adds it to the DOM.
 
 //  * It also adds event listeners to the buttons in each player card.
 
