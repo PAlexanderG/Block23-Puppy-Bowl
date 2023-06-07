@@ -15,7 +15,7 @@ const fetchAllPlayers = async () => {
     const response = await fetch(PLAYERS_API_URL);
     // console.log(response);
     const players = await response.json();
-    return players;
+    return players.data;
   } catch (err) {
     console.error("Uh oh, trouble fetching players!", err);
   }
@@ -52,10 +52,11 @@ const removePlayer = async (playerId) => {
 //  It takes an array of player objects, loops through them, and creates a string of HTML for each
 //  player, then adds that string to a larger string of HTML that represents all the players.
 
+// allPlayers.imageURL = to create <img class = "fit-picture" src="${allPlayers.imageUrl}">
+// in order to have access to everyone of the images
+
 const renderAllPlayers = (playerList) => {
-  const allPlayers = renderAllPlayers;
-  playerList.data.players.forEach((allPlayers) => {
-    const allPlayersElement = document.createElement("div");
+  playerList.players.forEach((allPlayers) => {
     const playerDetailsElement = document.createElement("div"); // method
     playerDetailsElement.classList.add("players");
     playerDetailsElement.classList.add("player");
@@ -63,19 +64,28 @@ const renderAllPlayers = (playerList) => {
 <h2>${allPlayers.id}</h2>
 <p>${allPlayers.name}</p>
 <p>${allPlayers.breed}</p>
-<p>${allPlayers.imageUrl}</p>
+<img class = "fit-picture" src="${allPlayers.imageUrl}">
 <p>${allPlayers.teamId}</p>
 <p>${allPlayers.cohortId}</p>
 
 <button class="close-button">Close</button>
 `;
+    playerContainer.appendChild(playerDetailsElement);
+    const closeButton = document.querySelector(".close-button");
+    closeButton.addEventListener("click", () => {
+      playerDetailsElement.remove();
+      playerDetailsElement.style.display = "flex";
+    });
     try {
     } catch (err) {
       console.error("Uh oh, trouble rendering players!", err);
     }
   });
 };
-
+// const closeButton = document.querySelectorAll(".close-button");
+// closeButton.addEventListener("click", () => {
+//   console.log("closeButton");
+// });
 //  Then it takes that larger string of HTML and adds it to the DOM.
 
 //  * It also adds event listeners to the buttons in each player card.
@@ -106,7 +116,6 @@ const renderNewPlayerForm = () => {
 const init = async () => {
   const players = await fetchAllPlayers();
   renderAllPlayers(players);
-
   renderNewPlayerForm();
 };
 
