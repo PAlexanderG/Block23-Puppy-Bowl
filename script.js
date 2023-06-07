@@ -71,6 +71,7 @@ const renderAllPlayers = (playerList) => {
 <button class="close-button">Close</button>
 `;
     playerContainer.appendChild(playerDetailsElement);
+    //  * It also adds event listeners to the buttons in each player card after .appendChild for working right
     const closeButton = document.querySelector(".close-button");
     closeButton.addEventListener("click", () => {
       playerDetailsElement.remove();
@@ -82,10 +83,6 @@ const renderAllPlayers = (playerList) => {
     }
   });
 };
-// const closeButton = document.querySelectorAll(".close-button");
-// closeButton.addEventListener("click", () => {
-//   console.log("closeButton");
-// });
 //  Then it takes that larger string of HTML and adds it to the DOM.
 
 //  * It also adds event listeners to the buttons in each player card.
