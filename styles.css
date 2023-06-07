@@ -3,10 +3,18 @@
   margin: 0;
   box-sizing: border-box;
 }
+h2 {
+  text-align: center;
+  color: orange;
+}
+p {
+  text-align: center;
+  color: blue;
+}
 div#all-players-container {
   display: flex;
   justify-content: space-evenly;
-  flex-wrap: wrap;
+  flex-wrap: wrap-reverse;
 }
 /* pretty buttons */
 button {
@@ -15,7 +23,13 @@ button {
   padding: 12px 20px;
   border: none;
   border-radius: 25px;
+  box-shadow: 10px 10px 10px grey;
+  display: flex;
+  margin: 10px;
 }
 .fit-picture {
   width: 250px;
+  border: solid blue;
+  box-shadow: 10px 10px 10px grey;
+  padding: 12px;
 }

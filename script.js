@@ -20,7 +20,7 @@ const fetchAllPlayers = async () => {
     console.error("Uh oh, trouble fetching players!", err);
   }
 };
-
+// fetchSingleplayer
 const fetchSinglePlayer = async (playerId) => {
   try {
     const singlePlayer_API_URL = `https://fsa-puppy-bowl.herokuapp.com/api/${playerId}/`;
@@ -61,15 +61,16 @@ const renderAllPlayers = (playerList) => {
     playerDetailsElement.classList.add("players");
     playerDetailsElement.classList.add("player");
     playerDetailsElement.innerHTML = `
-<h2>${allPlayers.id}</h2>
-<p>${allPlayers.name}</p>
+<h2>${allPlayers.name}</h2>
+<p>${allPlayers.id}</p>
 <p>${allPlayers.breed}</p>
-<img class = "fit-picture" src="${allPlayers.imageUrl}">
 <p>${allPlayers.teamId}</p>
 <p>${allPlayers.cohortId}</p>
+<img class = "fit-picture" src="${allPlayers.imageUrl}">
 
 <button class="close-button">Close</button>
 `;
+
     playerContainer.appendChild(playerDetailsElement);
     //  * It also adds event listeners to the buttons in each player card after .appendChild for working right
     const closeButton = document.querySelector(".close-button");
