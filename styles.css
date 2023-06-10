@@ -3,13 +3,19 @@
   margin: 0;
   box-sizing: border-box;
 }
+body {
+  background-image: url("APL_PuppyBowlXVII_2048x1152_r2.jpeg");
+  background-position: center center;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
 h2 {
   text-align: center;
   color: orange;
 }
 p {
   text-align: center;
-  color: blue;
+  color: orange;
 }
 div#all-players-container {
   display: flex;
@@ -27,7 +33,7 @@ button {
   display: flex;
   margin: 10px;
 }
-.fit-picture {
+.player img {
   width: 250px;
   border: solid blue;
   box-shadow: 10px 10px 10px grey;
