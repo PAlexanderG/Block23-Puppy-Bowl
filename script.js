@@ -15,6 +15,8 @@ const fetchAllPlayers = async () => {
     const response = await fetch(APIURL);
     const data = await response.json();
 
+    // if statement with Array meyhod
+
     if (!Array.isArray(data.data.players)) {
       console.warn("Uh oh, fetched player data is not an array!", data);
       return [];
@@ -29,6 +31,7 @@ const fetchAllPlayers = async () => {
 
 const fetchSinglePlayer = async (playerId) => {
   try {
+    // DELETE method by id witch deletes a player
     const requestOption = {
       method: "DELETE",
     };
@@ -74,9 +77,6 @@ const removePlayer = async (playerId) => {
 };
 
 /**
- * It takes an array of player objects, loops through them, and creates a string of HTML for each
- * player, then adds that string to a larger string of HTML that represents all the players.
- *
  * Then it takes that larger string of HTML and adds it to the DOM.
  *
  * It also adds event listeners to the buttons in each player card.
@@ -94,6 +94,8 @@ const removePlayer = async (playerId) => {
  * @returns the playerContainerHTML variable.
  */
 const renderAllPlayers = async (playerList) => {
+  // It takes an array of player objects, loops through them, and creates a string of HTML for each
+  // player, then adds that string to a larger string of HTML that represents all the players
   try {
     playerContainer.innerHTML = "";
 
@@ -106,26 +108,27 @@ const renderAllPlayers = async (playerList) => {
       const playerElement = document.createElement("div");
       playerElement.classList.add("player");
       playerElement.innerHTML = `
-      
+
+          <h2>Name: ${player.name}</h2>
           <h2>ID: ${player.id}</h2>
           <h2>Breed: ${player.breed}</h2>
           <img src="${player.imageUrl}">
-          <h2 class="hidden">Status: ${player.status}</h2>
-          <h2 class="hidden">Created At: ${player.createdAt}</h2>
-          <h2 class="hidden">Team ID: ${player.teamId}</h2>
-          <h2 class="hidden">Cohort ID: ${player.cohortId}</h2>
+          <p class="hidden">Status: ${player.status}</p>
+          <p class="hidden">Created At: ${player.createdAt}</p>
+          <p class="hidden">Team ID: ${player.teamId}</p>
+          <p class="hidden">Cohort ID: ${player.cohortId}</p>
           <button class="details-button" data-id="${player.id}">See Details</button>
-          <button class="remove-button" data-id="${player.id}">Remove from roster</button>
+          <button class="remove-button" data-id="${player.id}">Remove From Roster</button>
           `;
       playerContainer.appendChild(playerElement);
 
-      //hide element with class "hidden"
+      // hideElement with class ".hidden"
       let hiddenElements = playerElement.querySelectorAll(".hidden");
       hiddenElements.forEach((element) => {
         element.style.display = "none";
       });
 
-      // The event listeners for the "See details" and "Remove from roster"
+      // Add an event listeners for the "See details" and "Remove from roster"
       const detailsButton = playerElement.querySelector(".details-button");
       const removeButton = playerElement.querySelector(".remove-button");
 
@@ -164,31 +167,31 @@ const renderNewPlayerForm = async () => {
   try {
     const form = document.createElement("form");
 
-    // create input fields for the form
+    // make an input fields for the form
     form.innerHTML = `
             <label>
                 Name:
-                <input type="text" name="name">
+                <input type="text" name="name" autocomplete="on">
             </label>
             <label>
                 Breed:
-                <input type="text" name="breed">
+                <input type="text" name="breed" autocomplete="on">
             </label>
             <label>
                 Status:
-                <input type="text" name="status">
+                <input type="text" name="status" autocomplete="on">
             </label>
             <label>
                 Image URL:
-                <input type="text" name="imageUrl">
+                <input type="text" name="imageUrl" autocomplete="on">
             </label>
             <label>
                 Created At:
-                <input type="text" name="createdAt">
+                <input type="text" name="createdAt" autocomplete="on">
             </label>
             <label>
                 Team ID:
-                <input type="text" name="teamId">
+                <input type="text" name="teamId" autocomplete="on">
             </label>
             <label>
                 Cohort ID:
@@ -196,8 +199,10 @@ const renderNewPlayerForm = async () => {
             </label>
             <button type="submit">Add Player</button>
         `;
+    // Const form: HTMLFormElementadd an AddEventListener method
     form.addEventListener("submit", async (event) => {
       event.preventDefault();
+      // craete the playerOj with thier properties
       const playerObj = {
         id: form.id.value,
         name: form.name.value,
@@ -229,6 +234,6 @@ const init = async () => {
   console.log(players);
   renderAllPlayers(players);
   renderNewPlayerForm();
-}; //put it outside the function so that it wont duplicate addNewPLayer form.
+}; // Outside the funct becuase it wont duplicate the addNewPLayer form.
 
 init();

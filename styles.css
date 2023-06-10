@@ -5,8 +5,8 @@
 }
 body {
   background-image: url("APL_PuppyBowlXVII_2048x1152_r2.jpeg");
-  background-position: center center;
-  background-size: contain;
+  background-position: center;
+  background-size: 100%;
   background-repeat: no-repeat;
 }
 h2 {
@@ -29,13 +29,24 @@ button {
   padding: 12px 20px;
   border: none;
   border-radius: 25px;
-  box-shadow: 10px 10px 10px grey;
+  box-shadow: 5px 5px 5px grey;
   display: flex;
   margin: 10px;
+}
+.details-button {
+  margin-right: 22px;
 }
 .player img {
   width: 250px;
   border: solid blue;
-  box-shadow: 10px 10px 10px grey;
+  box-shadow: 10px 10px 10px rgb(69, 69, 69);
   padding: 12px;
+  background-color: white;
+}
+
+label {
+  color: blue;
+}
+input {
+  border: 2px solid orange;
 }
