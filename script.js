@@ -110,8 +110,8 @@ const renderAllPlayers = async (playerList) => {
       playerElement.innerHTML = `
 
           <h2>Name: ${player.name}</h2>
-          <h2>ID: ${player.id}</h2>
-          <h2>Breed: ${player.breed}</h2>
+          <p>ID: ${player.id}</p>
+          <p>Breed: ${player.breed}</p>
           <img src="${player.imageUrl}">
           <p class="hidden">Status: ${player.status}</p>
           <p class="hidden">Created At: ${player.createdAt}</p>

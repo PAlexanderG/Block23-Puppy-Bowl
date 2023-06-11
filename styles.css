@@ -8,25 +8,36 @@ body {
   background-position: center;
   background-size: 100%;
   background-repeat: no-repeat;
+  background-attachment: scroll;
+  margin: 10px 10px 10px 10px;
+}
+h1 {
+  text-align: center;
+  color: orange;
+  text-decoration: underline;
+  text-shadow: 1px 1px 2px #616161;
 }
 h2 {
   text-align: center;
   color: orange;
+  text-shadow: 1px 1px 2px #303030;
 }
 p {
   text-align: center;
   color: orange;
+  text-shadow: 1px 1px 2px #303030;
 }
 div#all-players-container {
   display: flex;
   justify-content: space-evenly;
   flex-wrap: wrap-reverse;
+  margin: 20px;
 }
 /* pretty buttons */
 button {
   background-color: blue;
   color: azure;
-  padding: 12px 20px;
+  padding: 5px 25px 5px 25px;
   border: none;
   border-radius: 25px;
   box-shadow: 5px 5px 5px grey;
@@ -36,16 +47,29 @@ button {
 .details-button {
   margin-right: 22px;
 }
+div#player.p.hidden {
+  width: 300px;
+  border: solid blue;
+  box-shadow: 10px 10px 10px rgb(69, 69, 69);
+  padding: 12px;
+}
 .player img {
-  width: 250px;
+  width: 300px;
   border: solid blue;
   box-shadow: 10px 10px 10px rgb(69, 69, 69);
   padding: 12px;
   background-color: white;
 }
-
+form {
+  bottom: auto;
+  right: 0;
+  border: 3px solid orange;
+  background-color: rgb(255, 255, 255);
+  padding: 12px;
+  margin: 5px;
+}
 label {
-  color: blue;
+  color: orange;
 }
 input {
   border: 2px solid orange;
