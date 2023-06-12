@@ -6,7 +6,7 @@
 body {
   background-image: url("APL_PuppyBowlXVII_2048x1152_r2.jpeg");
   background-position: center;
-  background-size: 100%;
+  background-size: 150%;
   background-repeat: no-repeat;
   background-attachment: scroll;
   margin: 10px 10px 10px 10px;
@@ -20,12 +20,15 @@ h1 {
 h2 {
   text-align: center;
   color: orange;
-  text-shadow: 1px 1px 2px #303030;
+  text-shadow: 1px 1px 2px #616161;
 }
 p {
   text-align: center;
   color: orange;
-  text-shadow: 1px 1px 2px #303030;
+  text-shadow: 1px 1px 1px #858585;
+  padding: auto;
+  margin: auto;
+  border: auto;
 }
 div#all-players-container {
   display: flex;
@@ -59,6 +62,7 @@ div#player.p.hidden {
   box-shadow: 10px 10px 10px rgb(69, 69, 69);
   padding: 12px;
   background-color: white;
+  margin: 12px;
 }
 form {
   bottom: auto;
@@ -68,9 +72,17 @@ form {
   padding: 12px;
   margin: 5px;
 }
+
 label {
   color: orange;
 }
 input {
   border: 2px solid orange;
 }
+
+/* @media screen and (max-width: 600px) {
+  div.example {
+    display: none;
+    background-image: none;
+  }
+} */
