@@ -18,13 +18,13 @@ const fetchAllPlayers = async () => {
     // if statement with Array meyhod
 
     if (!Array.isArray(data.data.players)) {
-      console.warn("Uh oh, fetched player data is not an array!", data);
+      console.warn("Uh nooo, fetched player data is not an array!", data);
       return [];
     }
 
     return data.data.players;
   } catch (err) {
-    console.error("Uh oh, trouble fetching players!", err);
+    console.error("Uh nooo, trouble fetching players!", err);
     return [];
   }
 };
@@ -39,7 +39,7 @@ const fetchSinglePlayer = async (playerId) => {
     const players = await response.json();
     return players;
   } catch (err) {
-    console.error(`Oh no, trouble fetching player #${playerId}!`, err);
+    console.error(`Oh nooo, trouble fetching player #${playerId}!`, err);
   }
 };
 
@@ -56,7 +56,10 @@ const addNewPlayer = async (playerObj) => {
     const newPlayer = await response.json();
     return newPlayer;
   } catch (err) {
-    console.error("Oops, something went wrong with adding that player!", err);
+    console.error(
+      "Oops, there was something wrong with adding that player!",
+      err
+    );
   }
 };
 
@@ -70,7 +73,7 @@ const removePlayer = async (playerId) => {
     return players;
   } catch (err) {
     console.error(
-      `Whoops, trouble removing player #${playerId} from the roster!`,
+      `Oops, we have issues removing player #${playerId} from the roster!`,
       err
     );
   }
@@ -100,7 +103,7 @@ const renderAllPlayers = async (playerList) => {
     playerContainer.innerHTML = "";
 
     if (!Array.isArray(playerList)) {
-      console.warn("Uh oh, playerList is not an array!", playerList);
+      console.warn("Uh oooh, playerList is not an array!", playerList);
       return;
     }
 
@@ -136,7 +139,7 @@ const renderAllPlayers = async (playerList) => {
         const playerId = event.target.dataset.id;
         const player = await fetchSinglePlayer(playerId);
         if (player) {
-          //display the details
+          //display the details if/else statement
           let hiddenElements = playerElement.querySelectorAll(".hidden");
           hiddenElements.forEach((element) => {
             if (element.style.display === "none") {
@@ -155,7 +158,7 @@ const renderAllPlayers = async (playerList) => {
       });
     });
   } catch (err) {
-    console.error("Uh oh, trouble rendering players!", err);
+    console.error("Ups, trouble rendering players!", err);
   }
 };
 
@@ -202,7 +205,7 @@ const renderNewPlayerForm = async () => {
     // Const form: HTMLFormElementadd an AddEventListener method
     form.addEventListener("submit", async (event) => {
       event.preventDefault();
-      // craete the playerOj with thier properties
+      // craete the playerOj with thier properties form: HTMLFormElement
       const playerObj = {
         id: form.id.value,
         name: form.name.value,
@@ -218,17 +221,21 @@ const renderNewPlayerForm = async () => {
 
       await addNewPlayer(playerObj);
 
-      // re-fetch all players and render them again
+      // re-fetch all players and render them again to show up the all players
       const players = await fetchAllPlayers();
       renderAllPlayers(players);
     });
 
     newPlayerFormContainer.appendChild(form);
   } catch (err) {
-    console.error("Uh oh, trouble rendering the new player form!", err);
+    console.error(
+      "Uh oh, we are having troubles rendering the new player form!",
+      err
+    );
   }
 };
 
+// init players promise
 const init = async () => {
   const players = await fetchAllPlayers();
   console.log(players);
