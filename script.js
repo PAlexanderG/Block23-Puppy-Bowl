@@ -15,7 +15,7 @@ const fetchAllPlayers = async () => {
     const response = await fetch(APIURL);
     const data = await response.json();
 
-    // if statement with Array meyhod
+    // if statement with Array method
 
     if (!Array.isArray(data.data.players)) {
       console.warn("Uh nooo, fetched player data is not an array!", data);

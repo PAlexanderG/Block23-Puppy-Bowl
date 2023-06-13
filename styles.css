@@ -80,9 +80,8 @@ input {
   border: 2px solid orange;
 }
 
-/* @media screen and (max-width: 600px) {
-  div.example {
-    display: none;
+@media screen and (max-width: 600px) {
+  body {
     background-image: none;
   }
-} */
+}
