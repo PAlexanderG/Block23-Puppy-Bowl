@@ -1,0 +1,180 @@
+const puppyBowl = [
+  {
+    success: true,
+    error: null,
+    data: {
+      players: [
+        {
+          id: 10967,
+          name: "Vixen",
+          breed: "Reindeer",
+          status: "bench",
+          imageUrl:
+            "https://learndotresources.s3.amazonaws.com/workshop/60ad725bbe74cd0004a6cba0/puppybowl-default-dog.png",
+          createdAt: "2023-06-18T23:46:21.266Z",
+          updatedAt: "2023-06-18T23:46:21.266Z",
+          teamId: null,
+          cohortId: 221,
+        },
+        {
+          id: 10992,
+          name: "zah",
+          breed: "re",
+          status: "bench",
+          imageUrl:
+            "https://learndotresources.s3.amazonaws.com/workshop/60ad725bbe74cd0004a6cba0/puppybowl-default-dog.png",
+          createdAt: "2023-06-19T08:45:43.311Z",
+          updatedAt: "2023-06-19T08:45:43.311Z",
+          teamId: null,
+          cohortId: 221,
+        },
+        {
+          id: 10968,
+          name: "Comet",
+          breed: "Reindeer",
+          status: "bench",
+          imageUrl:
+            "https://learndotresources.s3.amazonaws.com/workshop/60ad725bbe74cd0004a6cba0/puppybowl-default-dog.png",
+          createdAt: "2023-06-18T23:46:44.183Z",
+          updatedAt: "2023-06-18T23:46:44.183Z",
+          teamId: null,
+          cohortId: 221,
+        },
+        {
+          id: 10969,
+          name: "Cupid",
+          breed: "Reindeer",
+          status: "bench",
+          imageUrl:
+            "https://learndotresources.s3.amazonaws.com/workshop/60ad725bbe74cd0004a6cba0/puppybowl-default-dog.png",
+          createdAt: "2023-06-18T23:47:06.143Z",
+          updatedAt: "2023-06-18T23:47:06.143Z",
+          teamId: null,
+          cohortId: 221,
+        },
+        {
+          id: 10970,
+          name: "Donner",
+          breed: "Reindeer",
+          status: "bench",
+          imageUrl:
+            "https://learndotresources.s3.amazonaws.com/workshop/60ad725bbe74cd0004a6cba0/puppybowl-default-dog.png",
+          createdAt: "2023-06-18T23:47:23.975Z",
+          updatedAt: "2023-06-18T23:47:23.975Z",
+          teamId: null,
+          cohortId: 221,
+        },
+        {
+          id: 10971,
+          name: "Blitzen",
+          breed: "Reindeer",
+          status: "bench",
+          imageUrl:
+            "https://learndotresources.s3.amazonaws.com/workshop/60ad725bbe74cd0004a6cba0/puppybowl-default-dog.png",
+          createdAt: "2023-06-18T23:47:42.999Z",
+          updatedAt: "2023-06-18T23:47:42.999Z",
+          teamId: null,
+          cohortId: 221,
+        },
+        {
+          id: 10972,
+          name: "Rudolph",
+          breed: "Red nose Reindeer",
+          status: "bench",
+          imageUrl:
+            "https://learndotresources.s3.amazonaws.com/workshop/60ad725bbe74cd0004a6cba0/puppybowl-default-dog.png",
+          createdAt: "2023-06-18T23:48:17.504Z",
+          updatedAt: "2023-06-18T23:48:17.504Z",
+          teamId: null,
+          cohortId: 221,
+        },
+        {
+          id: 10960,
+          name: "Jamz",
+          breed: "German Shepherd",
+          status: "bench",
+          imageUrl:
+            "https://learndotresources.s3.amazonaws.com/workshop/60ad725bbe74cd0004a6cba0/puppybowl-default-dog.png",
+          createdAt: "2023-06-18T23:34:40.525Z",
+          updatedAt: "2023-06-18T23:34:40.525Z",
+          teamId: null,
+          cohortId: 221,
+        },
+        {
+          id: 10961,
+          name: "clifford",
+          breed: "big red dog",
+          status: "bench",
+          imageUrl:
+            "https://learndotresources.s3.amazonaws.com/workshop/60ad725bbe74cd0004a6cba0/puppybowl-default-dog.png",
+          createdAt: "2023-06-18T23:34:55.049Z",
+          updatedAt: "2023-06-18T23:34:55.049Z",
+          teamId: null,
+          cohortId: 221,
+        },
+        {
+          id: 10962,
+          name: "Tony",
+          breed: "Tiger",
+          status: "bench",
+          imageUrl:
+            "https://learndotresources.s3.amazonaws.com/workshop/60ad725bbe74cd0004a6cba0/puppybowl-default-dog.png",
+          createdAt: "2023-06-18T23:35:09.449Z",
+          updatedAt: "2023-06-18T23:35:09.449Z",
+          teamId: null,
+          cohortId: 221,
+        },
+        {
+          id: 10963,
+          name: "dasher",
+          breed: "deer",
+          status: "bench",
+          imageUrl:
+            "https://learndotresources.s3.amazonaws.com/workshop/60ad725bbe74cd0004a6cba0/puppybowl-default-dog.png",
+          createdAt: "2023-06-18T23:42:44.914Z",
+          updatedAt: "2023-06-18T23:42:44.914Z",
+          teamId: null,
+          cohortId: 221,
+        },
+        {
+          id: 10964,
+          name: "Dasher",
+          breed: "Reindeer",
+          status: "bench",
+          imageUrl:
+            "https://learndotresources.s3.amazonaws.com/workshop/60ad725bbe74cd0004a6cba0/puppybowl-default-dog.png",
+          createdAt: "2023-06-18T23:43:53.980Z",
+          updatedAt: "2023-06-18T23:43:53.980Z",
+          teamId: null,
+          cohortId: 221,
+        },
+        {
+          id: 10965,
+          name: "Dancer",
+          breed: "Reindeer",
+          status: "bench",
+          imageUrl:
+            "https://learndotresources.s3.amazonaws.com/workshop/60ad725bbe74cd0004a6cba0/puppybowl-default-dog.png",
+          createdAt: "2023-06-18T23:44:25.986Z",
+          updatedAt: "2023-06-18T23:44:25.986Z",
+          teamId: null,
+          cohortId: 221,
+        },
+        {
+          id: 10966,
+          name: "Prancer",
+          breed: "Reindeer",
+          status: "bench",
+          imageUrl:
+            "https://learndotresources.s3.amazonaws.com/workshop/60ad725bbe74cd0004a6cba0/puppybowl-default-dog.png",
+          createdAt: "2023-06-18T23:45:17.857Z",
+          updatedAt: "2023-06-18T23:45:17.857Z",
+          teamId: null,
+          cohortId: 221,
+        },
+      ],
+    },
+  },
+];
+
+module.exports = puppyBowl;
