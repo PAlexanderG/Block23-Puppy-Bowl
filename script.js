@@ -1,5 +1,4 @@
 // Export all data
-const puppyBowl = require("./puppy_bowl_data");
 
 const playerContainer = document.querySelector("#all-players-container");
 const newPlayerFormContainer = document.querySelector("#new-player-form");
